@@ -51,7 +51,7 @@ class Homepage extends StatelessWidget {
               padding: const EdgeInsets.only(right: 18.0, left: 18),
               child: TextField(
                 decoration: InputDecoration(
-                  hintText: "Search",
+                  hintText: "Search here",
                   hintStyle: TextStyle(),
                   suffixIcon: Icon(
                     Icons.format_list_bulleted_rounded,
@@ -61,6 +61,22 @@ class Homepage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20),
                   ),
                 ),
+              ),
+            ),
+            SizedBox(height: 21,),
+            Padding(
+              padding: const EdgeInsets.only(left: 18.0,right: 18),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Popular Destination",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                  TextButton(onPressed: (){}, child: Text("View All",style: TextStyle(
+                    color: Colors.black45
+                  ),),)
+                ],
               ),
             )
           ],
