@@ -1,8 +1,8 @@
-import 'dart:async';
-import 'package:flutter/material.dart';
+ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:travel_app_ui/pages/Home.dart';
 import 'package:travel_app_ui/pages/HomePage.dart';
 
 import '../constant/colors.dart';
@@ -105,7 +105,7 @@ class _splashScreenState extends State<splashScreen>
                   SizedBox(height: 20.h),
                   GestureDetector(
                     onTap: () {
-                      print("Explore");
+                      Get.to(() => Home());
                     },
                     child: Container(
                       padding:
