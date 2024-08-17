@@ -85,7 +85,7 @@ class _splashScreenState extends State<splashScreen>
                               style: GoogleFonts.getFont(
                                 "Montserrat",
                                 fontSize: 45.sp,
-                                letterSpacing: 1.5,
+                                letterSpacing: 2.0,
                                 color: Colors.white,
                                 fontWeight: FontWeight.w600,
                               ),
