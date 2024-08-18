@@ -12,7 +12,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   @override
-  late TabController tabController;
+  late TabController _tabController;
 
   @override
   void initState() {
@@ -108,6 +108,31 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                 ),
               ),
             ),
+            TabBar(
+              controller: _tabController,
+              indicatorColor: Colors.green[400],
+              labelColor: Colors.green[400],
+              unselectedLabelColor: Colors.lightGreen,
+              labelStyle: GoogleFonts.robotoCondensed(
+                  fontWeight: FontWeight.w700, fontSize: 16),
+              unselectedLabelStyle: GoogleFonts.robotoCondensed(
+                  fontWeight: FontWeight.w700, fontSize: 16),
+              tabs: [
+                Tab(
+                  text: "Location",
+                ),
+                Tab(
+                  text: "Hotels",
+                ),
+                Tab(
+                  text: "Food",
+                ),
+                Tab(
+                  text: "Adventure",
+                ),
+                
+              ],
+            )
           ],
         ),
         bottomNavigationBar: BottomNavigationBar(
