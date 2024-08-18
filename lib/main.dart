@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             title: 'Travel App',
             theme: ThemeData(
-              // brightness: Brightness.dark,
+              brightness: Brightness.light,
             ),
             home: child,
           );

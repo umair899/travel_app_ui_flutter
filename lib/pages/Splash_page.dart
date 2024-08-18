@@ -1,11 +1,9 @@
- import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:travel_app_ui/pages/Home.dart';
 import 'package:travel_app_ui/pages/HomePage.dart';
-
-import '../constant/colors.dart';
 
 class splashScreen extends StatefulWidget {
   const splashScreen({Key? key}) : super(key: key);
@@ -48,14 +46,29 @@ class _splashScreenState extends State<splashScreen>
                 alignment: Alignment.center,
                 child: Padding(
                   padding: const EdgeInsets.only(top: 50.0),
-                  child: Text(
-                    "Travel App",
-                    style: GoogleFonts.getFont(
-                      "Kaushan Script",
-                      fontSize: 80.sp,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    
+                    children: [
+                      Text(
+                        "TraveLooper",
+                        style: GoogleFonts.getFont(
+                          "Kaushan Script",
+                          fontSize: 75.sp,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        "BY EZIO",
+                        style: GoogleFonts.getFont(
+                          "Noto Sans",
+                          fontSize: 22.sp,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -91,7 +104,7 @@ class _splashScreenState extends State<splashScreen>
                               ),
                             ),
                             TextSpan(
-                              text: "\n BY THIS APP",
+                              text: "\n WITH ME NOW",
                               style: GoogleFonts.getFont(
                                 "Montserrat",
                                 fontSize: 16.sp,
@@ -111,7 +124,7 @@ class _splashScreenState extends State<splashScreen>
                       padding:
                           EdgeInsets.symmetric(vertical: 15, horizontal: 130),
                       decoration: BoxDecoration(
-                        color: bgcolor1,
+                        color: Colors.green[400],
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: Center(
@@ -119,7 +132,7 @@ class _splashScreenState extends State<splashScreen>
                           "Explore",
                           style: GoogleFonts.getFont(
                             "Roboto Condensed",
-                            fontSize: 20.sp,
+                            fontSize: 22.sp,
                             color: Colors.white,
                             fontWeight: FontWeight.w500,
                           ),

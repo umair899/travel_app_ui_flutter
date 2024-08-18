@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:travel_app_ui/constant/colors.dart';
 
 class Homepage extends StatelessWidget {
   const Homepage({super.key});
@@ -45,7 +44,7 @@ class Homepage extends StatelessWidget {
                       style: TextStyle(color: Colors.white, fontSize: 20),
                     ),
                     radius: 25.r,
-                    backgroundColor: bgcolor2,
+                    // backgroundColor: bgcolor2,
                   )
                 ],
               ),
@@ -113,7 +112,7 @@ class Homepage extends StatelessWidget {
                         height: 54.h,
                         width: 136.w,
                         decoration: BoxDecoration(
-                          color: bgcolor1..withOpacity(0.7),
+                          color: Colors.deepPurple.withOpacity(0.7),
                           borderRadius: BorderRadius.circular(20),
                         ),
                         child: Center(
