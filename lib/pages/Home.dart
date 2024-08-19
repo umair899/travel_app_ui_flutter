@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:travel_app_ui/widget/popular_item.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -143,7 +144,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
               height: 20.h,
             ),
             Expanded(
-              child: TabBarView(children: [
+              child: TabBarView(controller: tabController, children: [
                 buildTabContent(
                   "Near me",
                 ),
@@ -191,12 +192,12 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
 
   Widget buildTabContent(String tab) {
     return Padding(
-      padding: EdgeInsets.all(20),
+      padding: EdgeInsets.symmetric(horizontal: 20.w),
       child: SingleChildScrollView(
         child: Column(
           children: [
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.w),
+              padding: EdgeInsets.symmetric(horizontal: 12.w),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -222,6 +223,29 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
             SizedBox(
               height: 20.h,
             ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  PopularItem(
+                      title: "Lahore",
+                      subtitle: "Pakistan",
+                      rating: "4.8",
+                      image: "assets/lahore.png"),
+                  PopularItem(
+                      subtitle: "Pakistan",
+                      title: "Kalash Valley",
+                      rating: "4.4",
+                      image: "assets/KalashValleys.jpg"),
+                  PopularItem(
+                      subtitle: "Pakistan",
+                      title: "Phander Lake",
+                      rating: "4.1",
+                      image: "assets/PhanderLake.jpg"),
+                ],
+              ),
+            )
           ],
         ),
       ),

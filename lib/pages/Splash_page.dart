@@ -48,7 +48,6 @@ class _splashScreenState extends State<splashScreen>
                   padding: const EdgeInsets.only(top: 50.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
-                    
                     children: [
                       Text(
                         "TraveLooper",
