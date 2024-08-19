@@ -12,10 +12,12 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   @override
-  late TabController _tabController;
+  late TabController tabController;
 
   @override
   void initState() {
+    tabController = TabController(length: 4, vsync: this);
+
     super.initState();
   }
 
@@ -23,8 +25,6 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   void dispose() {
     super.dispose();
   }
-
-  int _selectedIndex = 0;
 
   Widget build(BuildContext context) {
     return SafeArea(
@@ -108,31 +108,56 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                 ),
               ),
             ),
+            SizedBox(
+              height: 20,
+            ),
             TabBar(
-              controller: _tabController,
+              controller: tabController,
               indicatorColor: Colors.green[400],
               labelColor: Colors.green[400],
-              unselectedLabelColor: Colors.lightGreen,
+              unselectedLabelColor: Colors.black38,
               labelStyle: GoogleFonts.robotoCondensed(
                   fontWeight: FontWeight.w700, fontSize: 16),
               unselectedLabelStyle: GoogleFonts.robotoCondensed(
                   fontWeight: FontWeight.w700, fontSize: 16),
               tabs: [
                 Tab(
-                  text: "Location",
+                  text: "Near Me",
+                  icon: Icon(Icons.location_on),
                 ),
                 Tab(
                   text: "Hotels",
+                  icon: Icon(Icons.hotel),
                 ),
                 Tab(
                   text: "Food",
+                  icon: Icon(Icons.fastfood),
                 ),
                 Tab(
+                  icon: Icon(Icons.camera),
                   text: "Adventure",
                 ),
-                
               ],
-            )
+            ),
+            SizedBox(
+              height: 20.h,
+            ),
+            Expanded(
+              child: TabBarView(children: [
+                buildTabContent(
+                  "Near me",
+                ),
+                buildTabContent(
+                  "Hotels",
+                ),
+                buildTabContent(
+                  "Food",
+                ),
+                buildTabContent(
+                  "Adventure",
+                ),
+              ]),
+            ),
           ],
         ),
         bottomNavigationBar: BottomNavigationBar(
@@ -157,6 +182,45 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
             BottomNavigationBarItem(
               icon: Icon(Icons.person),
               label: 'Person',
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget buildTabContent(String tab) {
+    return Padding(
+      padding: EdgeInsets.all(20),
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20.w),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Popular Destination",
+                    style: GoogleFonts.montserrat(
+                      fontSize: 18.sp,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  Text(
+                    "View All",
+                    style: GoogleFonts.montserrat(
+                      fontSize: 16.sp,
+                      color: Colors.green[400],
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 20.h,
             ),
           ],
         ),
