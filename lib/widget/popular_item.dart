@@ -19,7 +19,9 @@ class PopularItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        print("Tapped");
+      },
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10.0),
         child: Container(
@@ -30,11 +32,11 @@ class PopularItem extends StatelessWidget {
             borderRadius: BorderRadius.circular(20),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.1),
+                color: Colors.black.withOpacity(0.6),
                 blurRadius: 10,
-                spreadRadius: 5,
+                spreadRadius: 2,
                 blurStyle: BlurStyle.normal,
-                offset: Offset(-9, -9),
+                offset: Offset(-1, -5),
               ),
             ],
             image: DecorationImage(
@@ -47,20 +49,9 @@ class PopularItem extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    // Container(
-                    //   width: 50.w,
-                    //   height: 50.h,
-                    //   decoration: BoxDecoration(
-                    //     color: Colors.white,
-                    //     borderRadius: BorderRadius.circular(10),
-                    //   ),
-                    //   child: Center(
-                    //     child: Icon(
-                    //       Icons.favorite,
-                    //       color: Colors.red,
-                    //     ),
-                    //   ),
-                    // ),
+                    SizedBox(
+                      height: 15.h,
+                    ),
                     Container(
                       width: 50.w,
                       height: 50.h,
@@ -88,7 +79,8 @@ class PopularItem extends StatelessWidget {
                       height: 75.h,
                       width: 240.w,
                       decoration: BoxDecoration(
-                          color: Colors.black.withOpacity(.5),
+                          color: Color(0xff4E4B4B).withOpacity(.9),
+                          
                           borderRadius: BorderRadius.circular(10)),
                       alignment: Alignment.topLeft,
                       child: Padding(
@@ -113,7 +105,7 @@ class PopularItem extends StatelessWidget {
                               children: [
                                 Icon(
                                   Icons.location_on,
-                                  color: Colors.white,
+                                  color: Colors.green[200],
                                   size: 20.sp,
                                 ),
                                 Text(
@@ -124,7 +116,9 @@ class PopularItem extends StatelessWidget {
                                       fontWeight: FontWeight.bold,
                                       height: 1.3),
                                 ),
-                                SizedBox(width: 60.w,),
+                                SizedBox(
+                                  width: 60.w,
+                                ),
                                 Row(
                                   children: [
                                     Icon(
