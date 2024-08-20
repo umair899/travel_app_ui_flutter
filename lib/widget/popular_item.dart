@@ -2,7 +2,9 @@ import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:travel_app_ui/pages/Place_screen_detail.dart';
 
 class PopularItem extends StatelessWidget {
   final String title;
@@ -20,7 +22,7 @@ class PopularItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        print("Tapped");
+       Get.to(PlaceScreenDetail());
       },
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10.0),
@@ -30,15 +32,15 @@ class PopularItem extends StatelessWidget {
           decoration: BoxDecoration(
             color: Colors.black.withOpacity(.9),
             borderRadius: BorderRadius.circular(20),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.6),
-                blurRadius: 10,
-                spreadRadius: 2,
-                blurStyle: BlurStyle.normal,
-                offset: Offset(-1, -5),
-              ),
-            ],
+            // boxShadow: [
+            //   BoxShadow(
+            //     color: Colors.black.withOpacity(0.6),
+            //     blurRadius: 10,
+            //     spreadRadius: 2,
+            //     blurStyle: BlurStyle.normal,
+            //     // offset: Offset(-1, -5),
+            //   ),
+            // ],
             image: DecorationImage(
                 image: AssetImage(image), opacity: .5, fit: BoxFit.cover),
           ),
